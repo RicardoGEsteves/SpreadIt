@@ -1,6 +1,8 @@
 # SpreadIt
 
-`create-next-app`
+SpreadIt is a dynamic social news aggregation platform powered by robust backend technologies and a user-friendly interface. It employs modern web development frameworks and scalable architecture to enable seamless content submission, sharing, and voting across various formats (articles, images, videos).
+
+`TypeScript, React, Next.js`
 
 ## Getting Started
 
@@ -14,4 +16,20 @@ yarn dev
 pnpm dev
 # or
 bun dev
+```
+
+## .env
+
+```bash
+DATABASE_URL=
+NEXTAUTH_SECRET=
+
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
+
+REDIS_URL=
+REDIS_SECRET=
 ```
