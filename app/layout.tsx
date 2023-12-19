@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
 
 import "@/styles/globals.css";
 
@@ -23,7 +24,10 @@ export default function RootLayout({
       lang="en"
       className={cn("dark antialiased", inter.className)}
     >
-      <body className="min-h-screen pt-12 antialiased">{children}</body>
+      <body className="min-h-screen pt-12 antialiased">
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

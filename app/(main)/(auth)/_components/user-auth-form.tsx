@@ -1,17 +1,34 @@
+"use client";
+
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
 const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { toast } = useToast();
 
   const loginWithGoogle = async () => {
     setIsLoading(true);
-    // TODO: Implement Google login
+
+    try {
+      await signIn("google");
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: `There was an error logging in with Google, [${error.message}]. Please try again.`,
+        variant: "default",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+
     setIsLoading(false);
   };
 
