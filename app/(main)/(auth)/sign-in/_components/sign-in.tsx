@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import UserAuthForm from "../../_components/user-auth-form";
 
 const SignIn = () => {
   return (
@@ -15,7 +16,7 @@ const SignIn = () => {
           our User Agreement and Privacy Policy.
         </p>
       </div>
-      {/* <UserAuthForm /> */}
+      <UserAuthForm />
       <p className="px-8 text-center text-sm text-muted-foreground">
         New to SpreadIt?{" "}
         <Link
