@@ -1,16 +1,34 @@
 import { LucideProps, MessageSquare, User } from "lucide-react";
-import Image from "next/image";
-import SpreadIt from "./spreadit.svg";
+
+type LogoProps = {
+  className?: string;
+};
 
 export const Icons = {
   user: User,
-  logo: () => (
-    <Image
-      src={SpreadIt}
-      alt="SpreadIt Logo"
-      width={200}
-      height={200}
-    />
+  logo: ({ className }: LogoProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="400"
+      height="400"
+      viewBox="0 0 512 512"
+      className={className}
+    >
+      <circle
+        cx="256"
+        cy="256"
+        r="250"
+        fill="#10b981"
+      />
+      <path
+        fill="#0a0a0a"
+        d="M122 378 256 18l134 360z"
+      />
+      <path
+        fill="#fafafa"
+        d="m184 340 72-176 72 176-72 160z"
+      />
+    </svg>
   ),
   google: (props: LucideProps) => (
     <svg
