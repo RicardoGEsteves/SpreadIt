@@ -14,7 +14,7 @@ const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { toast } = useToast();
 
-  const loginWithGoogle = async () => {
+  const signInWithGoogle = async () => {
     setIsLoading(true);
 
     try {
@@ -42,7 +42,7 @@ const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
         type="button"
         size="sm"
         className="w-full"
-        onClick={loginWithGoogle}
+        onClick={signInWithGoogle}
         disabled={isLoading}
       >
         {isLoading ? null : <Icons.google className="h-4 w-4 mr-2" />}
