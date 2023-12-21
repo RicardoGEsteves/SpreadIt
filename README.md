@@ -2,7 +2,7 @@
 
 SpreadIt is a dynamic social news aggregation platform powered by robust backend technologies and a user-friendly interface. It employs modern web development frameworks and scalable architecture to enable seamless content submission, sharing, and voting across various formats (articles, images, videos).
 
-`TypeScript, React, Next.js, PostgeSQL, Supabase, Redis, Upstash Redis, Prisma, NextAuth, OAuth2, UploadThing, TailwindCSS, Shadcn-ui, `
+`TypeScript, React, Next.js, PostgeSQL, Supabase, Redis, Upstash Redis, Tanstack/react-query, Prisma, NextAuth, OAuth2, Axios, Zod, UploadThing, TailwindCSS, Shadcn-ui, `
 
 ## Getting Started
 
