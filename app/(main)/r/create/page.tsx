@@ -85,7 +85,14 @@ const CreatePage = () => {
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="pl-6"
+              className="pl-6 mt-3"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  createCommunity();
+                } else if (e.key === "Escape") {
+                  setInput("");
+                }
+              }}
             />
           </div>
         </div>
@@ -93,7 +100,7 @@ const CreatePage = () => {
         <div className="flex justify-end gap-4">
           <Button
             disabled={isLoading}
-            variant="secondary"
+            variant="default"
             onClick={() => router.back()}
           >
             Cancel
@@ -102,6 +109,7 @@ const CreatePage = () => {
             isLoading={isLoading}
             disabled={input.length === 0}
             onClick={() => createCommunity()}
+            variant={"primary"}
           >
             SpreadIt
           </Button>
