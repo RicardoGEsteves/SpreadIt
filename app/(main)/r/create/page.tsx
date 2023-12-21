@@ -39,7 +39,8 @@ const CreatePage = () => {
         if (err.response?.status === 422) {
           return toast({
             title: "Invalid subSpreadIt name.",
-            description: "Please choose a name between 3 and 21 letters.",
+            description:
+              "Please choose a name between 3 and 21 letters. You can only use letters, numbers, dashes and underscores. You can't have withe spaces.",
             variant: "default",
           });
         }
