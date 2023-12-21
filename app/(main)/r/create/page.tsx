@@ -112,7 +112,7 @@ const CreatePage = () => {
             onClick={() => createCommunity()}
             variant={"primary"}
           >
-            SpreadIt
+            Create Community
           </Button>
         </div>
       </div>
