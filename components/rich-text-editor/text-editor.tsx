@@ -1,13 +1,13 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import { useEffect, useMemo, useRef } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { useForm } from "react-hook-form";
+import { usePathname, useRouter } from "next/navigation";
 import TextareaAutosize from "react-textarea-autosize";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 import { toast } from "@/hooks/use-toast";
@@ -23,6 +23,7 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
   const {
     register,
     handleSubmit,
+    //TODO: Test form errors
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(PostValidator),
@@ -32,16 +33,18 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
       content: null,
     },
   });
-
-  const Editor = useMemo(
-    () => dynamic(() => import("@/components/editor"), { ssr: false }),
-    []
-  );
-
-  const titleRef = useRef(null);
-  const editorContentRef = useRef("");
+  const [headerTitle, setHeaderTitle] = useState("");
+  const [editorContent, setEditorContent] = useState();
   const router = useRouter();
   const pathname = usePathname();
+
+  const EditorSetup = useMemo(
+    () =>
+      dynamic(() => import("@/components/rich-text-editor/editor-setup"), {
+        ssr: false,
+      }),
+    []
+  );
 
   const { mutate: createPost } = useMutation({
     mutationFn: async ({
@@ -60,10 +63,11 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
       return toast({
         title: "Something went wrong.",
         description: "Your post was not published. Please try again.",
-        variant: "default",
+        variant: "destructive",
       });
     },
     onSuccess: () => {
+      // turn pathname /r/mycommunity/submit into /r/mycommunity
       const newPathname = pathname.split("/").slice(0, -1).join("/");
       router.push(newPathname);
 
@@ -74,58 +78,53 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
       });
     },
   });
+  //TODO: Finish implementation
+  async function handleEditorChange(editor: any) {
+    let editorBlocks = JSON.parse(editor);
+    setEditorContent(editorBlocks);
+    console.log(editorBlocks.map((block: any) => block.content));
+  }
 
-  useEffect(() => {
-    if (Object.keys(errors).length) {
-      for (const [_key, value] of Object.entries(errors)) {
-        value;
-        toast({
-          title: "Something went wrong.",
-          description: (value as { message: string }).message,
-          variant: "default",
-        });
-      }
+  async function onSubmit(data: FormData) {
+    if (!editorContent) {
+      return toast({
+        title: "Something went wrong.",
+        description: "Your post was not published. Please try again.",
+        variant: "default",
+      });
     }
-  }, [errors]);
 
-  const onChange = (content: string) => {
-    editorContentRef.current = content;
-  };
-
-  function onSubmit(data: FormData) {
     const payload: PostCreationRequest = {
+      //TODO: Check values
       title: data.title,
+      content: editorContent,
       subSpreadItId,
-      content: editorContentRef.current,
     };
 
     createPost(payload);
   }
 
-  const { ref: titleRefRegister, ...titleRefRest } = register("title");
-
   return (
     <div className="w-full p-4 bg-background rounded-lg border">
       <form
-        id="subspreadit-post-form"
+        id="subreddit-post-form"
         className="w-fit"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="prose prose-stone dark:prose-invert">
           <TextareaAutosize
-            ref={(e) => {
-              // @ts-expect-error
-              titleRef.current = e;
-              titleRefRegister(e);
-            }}
-            {...titleRefRest}
+            value={headerTitle}
+            onChange={(e) => setHeaderTitle(e.target.value)}
             placeholder="Title"
             className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none placeholder:text-muted-foreground"
           />
-          <div className="min-h-[500px]">
-            <Editor
+          <div
+            id="editor"
+            className="min-h-[500px]"
+          >
+            <EditorSetup
+              onChange={handleEditorChange}
               editable
-              onChange={onChange}
             />
           </div>
         </div>

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { db } from "@/lib/db";
-import TextEditor from "@/components/text-editor";
+import TextEditor from "@/components/rich-text-editor/text-editor";
 
 type SubmitPostProps = {
   params: {
