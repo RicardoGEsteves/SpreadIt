@@ -27,7 +27,7 @@ const EditorSetup = ({ onChange, editable }: EditorSetupProps) => {
       throw new Error("File upload failed");
     }
   };
-
+  //TODO: FIX HYPERLINK URL PROP/CONFIG
   const editor: BlockNoteEditor = useBlockNote({
     editable,
     onEditorContentChange: (editor) => {

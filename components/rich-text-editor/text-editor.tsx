@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
@@ -23,7 +23,6 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
   const {
     register,
     handleSubmit,
-    //TODO: Test form errors
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(PostValidator),
@@ -33,7 +32,7 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
       content: null,
     },
   });
-  const [headerTitle, setHeaderTitle] = useState("");
+  // const [headerTitle, setHeaderTitle] = useState("");
   const [editorContent, setEditorContent] = useState();
   const router = useRouter();
   const pathname = usePathname();
@@ -78,11 +77,26 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
       });
     },
   });
+
+  useEffect(() => {
+    if (Object.keys(errors).length) {
+      for (const [_key, value] of Object.entries(errors)) {
+        value;
+        toast({
+          title: "Something went wrong.",
+          description: (value as { message: string }).message,
+          variant: "destructive",
+        });
+      }
+    }
+  }, [errors]);
+
   //TODO: Finish implementation
   async function handleEditorChange(editor: any) {
-    let editorBlocks = JSON.parse(editor);
+    const editorBlocks = JSON.parse(editor);
     setEditorContent(editorBlocks);
-    console.log(editorBlocks.map((block: any) => block.content));
+    // console.log(editorBlocks.map((block: any) => block.content));
+    console.log(editorBlocks);
   }
 
   async function onSubmit(data: FormData) {
@@ -107,14 +121,15 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
   return (
     <div className="w-full p-4 bg-background rounded-lg border">
       <form
-        id="subreddit-post-form"
+        id="subspreadit-post-form"
         className="w-fit"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="prose prose-stone dark:prose-invert">
           <TextareaAutosize
-            value={headerTitle}
-            onChange={(e) => setHeaderTitle(e.target.value)}
+            // value={headerTitle}
+            // onChange={(e) => setHeaderTitle(e.target.value)}
+            {...register("title")}
             placeholder="Title"
             className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none placeholder:text-muted-foreground"
           />
