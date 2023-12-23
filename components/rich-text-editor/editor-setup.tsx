@@ -3,7 +3,7 @@
 import { BlockNoteEditor } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/core/style.css";
-import { Uploader } from "@/lib/uploadthing";
+import { uploadFiles } from "@/lib/uploadthing";
 
 type EditorSetupProps = {
   onChange: (value: string) => void;
@@ -12,11 +12,20 @@ type EditorSetupProps = {
 };
 
 const EditorSetup = ({ onChange, editable }: EditorSetupProps) => {
-  const handleUpload = async (file: File) => {
-    const uploadData = { file: file, endpoint: "imageUploader" as const };
-    const res = await Uploader(uploadData);
+  const handleUploadFile = async (file: File): Promise<string> => {
+    try {
+      const endpoint = "imageUploader";
+      const options = {
+        files: [file],
+      };
 
-    return res.props.file;
+      const [res] = await uploadFiles(endpoint, options);
+
+      return res.url;
+    } catch (error) {
+      console.error("Error uploading file:", error);
+      throw new Error("File upload failed");
+    }
   };
 
   const editor: BlockNoteEditor = useBlockNote({
@@ -24,7 +33,7 @@ const EditorSetup = ({ onChange, editable }: EditorSetupProps) => {
     onEditorContentChange: (editor) => {
       onChange(JSON.stringify(editor.topLevelBlocks, null, 2));
     },
-    uploadFile: handleUpload,
+    uploadFile: handleUploadFile,
   });
 
   return (
