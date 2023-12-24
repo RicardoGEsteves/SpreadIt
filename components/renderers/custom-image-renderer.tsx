@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 
-const CustomImageRenderer = ({ data }: any) => {
-  const src = data.file.url;
+const CustomImageRenderer = ({ content }: any) => {
+  //TODO: or use content.url check it out
+  const src = content.file.url;
 
   return (
     <div className="relative w-full min-h-[15rem]">
