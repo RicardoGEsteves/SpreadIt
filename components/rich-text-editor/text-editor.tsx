@@ -32,7 +32,7 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
       content: null,
     },
   });
-  // const [headerTitle, setHeaderTitle] = useState("");
+
   const [editorContent, setEditorContent] = useState();
   const router = useRouter();
   const pathname = usePathname();
@@ -91,12 +91,9 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
     }
   }, [errors]);
 
-  //TODO: Finish implementation
   async function handleEditorChange(editor: any) {
     const editorBlocks = JSON.parse(editor);
     setEditorContent(editorBlocks);
-    // console.log(editorBlocks.map((block: any) => block.content));
-    console.log(editorBlocks);
   }
 
   async function onSubmit(data: FormData) {
@@ -109,7 +106,6 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
     }
 
     const payload: PostCreationRequest = {
-      //TODO: Check values
       title: data.title,
       content: editorContent,
       subSpreadItId,
@@ -127,8 +123,6 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
       >
         <div className="prose prose-stone dark:prose-invert">
           <TextareaAutosize
-            // value={headerTitle}
-            // onChange={(e) => setHeaderTitle(e.target.value)}
             {...register("title")}
             placeholder="Title"
             className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none placeholder:text-muted-foreground"

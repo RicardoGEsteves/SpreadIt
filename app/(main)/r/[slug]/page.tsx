@@ -4,6 +4,7 @@ import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { INFINITE_SCROLL_PAGINATION_RESULTS } from "@/config/config";
 import SubSpreadItPost from "@/components/posts/sub-spreadIt-post";
+import PostFeed from "@/components/posts/post-feed";
 
 type SlugPageProps = {
   params: {
@@ -41,10 +42,10 @@ const SlugPage = async ({ params }: SlugPageProps) => {
         r/{subSpreadIt.name}
       </h1>
       <SubSpreadItPost session={session} />
-      {/* <PostFeed
+      <PostFeed
         initialPosts={subSpreadIt.posts}
         subSpreadItName={subSpreadIt.name}
-      /> */}
+      />
     </>
   );
 };
