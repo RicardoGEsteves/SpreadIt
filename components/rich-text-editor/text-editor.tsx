@@ -92,7 +92,7 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
   }, [errors]);
 
   async function handleEditorChange(editor: any) {
-    const editorBlocks = JSON.parse(editor);
+    const editorBlocks = editor;
     setEditorContent(editorBlocks);
   }
 
@@ -127,13 +127,12 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
             placeholder="Title"
             className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none placeholder:text-muted-foreground"
           />
-          <div
-            id="editor"
-            className="min-h-[500px]"
-          >
+          <div className="min-h-[500px]">
             <EditorSetup
               onChange={handleEditorChange}
               editable
+              //TODO: Check document identifier
+              // id="editor"
             />
           </div>
         </div>

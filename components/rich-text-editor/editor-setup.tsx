@@ -1,17 +1,17 @@
 "use client";
 
-import { BlockNoteEditor } from "@blocknote/core";
+import { BlockNoteEditor, PartialBlock } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/core/style.css";
 import { uploadFiles } from "@/lib/uploadthing";
 
 type EditorSetupProps = {
   onChange: (value: string) => void;
-  initialContent?: string;
+  content?: any;
   editable?: boolean;
 };
 
-const EditorSetup = ({ onChange, editable }: EditorSetupProps) => {
+const EditorSetup = ({ onChange, editable, content }: EditorSetupProps) => {
   const handleUploadFile = async (file: File): Promise<string> => {
     try {
       const endpoint = "imageUploader";
@@ -27,8 +27,19 @@ const EditorSetup = ({ onChange, editable }: EditorSetupProps) => {
       throw new Error("File upload failed");
     }
   };
+
+  const initialContentToPartialBlock = () => {
+    if (content && typeof content === "string") {
+      //@ts-expect-error
+      return JSON.parse(content) as PartialBlock[];
+    } else {
+      return [];
+    }
+  };
+
   //TODO: FIX HYPERLINK URL PROP/CONFIG
   const editor: BlockNoteEditor = useBlockNote({
+    initialContent: initialContentToPartialBlock(),
     editable,
     onEditorContentChange: (editor) => {
       onChange(JSON.stringify(editor.topLevelBlocks, null, 2));

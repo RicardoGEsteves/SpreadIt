@@ -1,11 +1,11 @@
 "use client";
 
-const CustomCodeRenderer = ({ data }: any) => {
-  data;
+const CustomCodeRenderer = ({ content }: any) => {
+  content;
 
   return (
-    <pre className="bg-gray-800 rounded-md p-4">
-      <code className="text-gray-100 text-sm">{data.code}</code>
+    <pre className="bg-secondary rounded-md p-4">
+      <code className="text-muted-foreground text-sm">{content.code}</code>
     </pre>
   );
 };
