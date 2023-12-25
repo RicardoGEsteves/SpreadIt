@@ -74,7 +74,7 @@ const CreatePage = () => {
 
         <div>
           <p className="text-lg font-medium">Name</p>
-          <p className="text-xs pb-2">
+          <p className="text-xs pb-2 text-muted-foreground">
             A community name is a unique identifier for your community, you can
             use it to refer to your community in the future. You can&apos;t
             change your community name after creating it.

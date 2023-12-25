@@ -19,7 +19,7 @@ type PostFeedProps = {
 const PostFeed = ({ initialPosts, subSpreadItName }: PostFeedProps) => {
   const lastPostRef = useRef<HTMLElement>(null);
   const { ref, entry } = useIntersection({
-    root: lastPostRef.current,
+    root: lastPostRef.current?.parentElement,
     threshold: 1,
   });
   const { data: session } = useSession();
@@ -27,7 +27,7 @@ const PostFeed = ({ initialPosts, subSpreadItName }: PostFeedProps) => {
   const fetchPosts = async ({ pageParam = 1 }: { pageParam: number }) => {
     const query =
       `/api/posts?limit=${INFINITE_SCROLL_PAGINATION_RESULTS}&page=${pageParam}` +
-      (subSpreadItName ? `&subSpreadItName=${subSpreadItName}` : "");
+      (!!subSpreadItName ? `&subSpreadItName=${subSpreadItName}` : "");
 
     const { data } = await axios.get(query);
     return data as ExtendedPost[];
@@ -38,7 +38,8 @@ const PostFeed = ({ initialPosts, subSpreadItName }: PostFeedProps) => {
     Error
   >({
     queryKey: ["infinite-query"],
-    queryFn: () => fetchPosts({ pageParam: 1 }), // Provide an initial value for pageParam
+    queryFn: ({ pageParam = 1 }) =>
+      fetchPosts({ pageParam: Number(pageParam) }), // Fetches the current page, // Provide an initial value for pageParam
     getNextPageParam: (_, pages) => {
       return pages.length + 1;
     },

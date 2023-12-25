@@ -62,7 +62,7 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
       return toast({
         title: "Something went wrong.",
         description: "Your post was not published. Please try again.",
-        variant: "destructive",
+        variant: "default",
       });
     },
     onSuccess: () => {
@@ -85,7 +85,7 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
         toast({
           title: "Something went wrong.",
           description: (value as { message: string }).message,
-          variant: "destructive",
+          variant: "default",
         });
       }
     }
@@ -131,8 +131,6 @@ const TextEditor = ({ subSpreadItId }: TextEditorProps) => {
             <EditorSetup
               onChange={handleEditorChange}
               editable
-              //TODO: Check document identifier
-              // id="editor"
             />
           </div>
         </div>
