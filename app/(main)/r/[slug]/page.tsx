@@ -29,9 +29,8 @@ const SlugPage = async ({ params }: SlugPageProps) => {
         orderBy: {
           createdAt: "desc",
         },
-        //TODO: Put this back after testing
-        // take: INFINITE_SCROLL_PAGINATION_RESULTS,
-        take: 10,
+
+        take: INFINITE_SCROLL_PAGINATION_RESULTS,
       },
     },
   });

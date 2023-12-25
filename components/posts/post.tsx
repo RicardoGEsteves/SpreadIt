@@ -7,6 +7,7 @@ import { MessageSquare } from "lucide-react";
 
 import { formatTimeToNow } from "@/lib/utils";
 import TextEditorOutput from "../rich-text-editor/text-editor-output";
+import PostVoteClient from "./post-vote/client";
 
 type PartialVote = Pick<Vote, "type">;
 
@@ -23,8 +24,8 @@ type PostProps = {
 
 const Post = ({
   post,
-  votesAmt: _votesAmt,
-  currentVote: _currentVote,
+  votesAmt,
+  currentVote,
   subSpreadItName,
   commentAmt,
 }: PostProps) => {
@@ -32,11 +33,11 @@ const Post = ({
   return (
     <div className="rounded-md bg-background border">
       <div className="px-6 py-4 flex justify-between">
-        {/* <PostVoteClient
+        <PostVoteClient
           postId={post.id}
-          initialVotesAmt={_votesAmt}
-          initialVote={_currentVote?.type}
-        /> */}
+          initialVotesAmt={votesAmt}
+          initialVote={currentVote?.type}
+        />
 
         <div className="w-0 flex-1">
           <div className="max-h-40 mt-1 text-xs text-muted-foreground">
