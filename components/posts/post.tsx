@@ -1,7 +1,7 @@
 "use client";
 
 import { Vote, Post, User } from "@prisma/client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MessageSquare } from "lucide-react";
 
@@ -30,6 +30,15 @@ const Post = ({
   commentAmt,
 }: PostProps) => {
   const pRef = useRef<HTMLParagraphElement>(null);
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+
   return (
     <div className="rounded-md bg-background border">
       <div className="px-6 py-4 flex justify-between">

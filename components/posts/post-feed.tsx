@@ -2,7 +2,7 @@
 
 import { useIntersection } from "@mantine/hooks";
 import { useSession } from "next-auth/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
@@ -13,7 +13,7 @@ import Post from "./post";
 
 type PostFeedProps = {
   initialPosts: ExtendedPost[];
-  subSpreadItName: string;
+  subSpreadItName?: string;
 };
 
 const PostFeed = ({ initialPosts, subSpreadItName }: PostFeedProps) => {
@@ -87,6 +87,14 @@ const PostFeed = ({ initialPosts, subSpreadItName }: PostFeedProps) => {
       </li>
     );
   });
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
 
   return (
     <ul className="flex flex-col col-span-2 space-y-6">

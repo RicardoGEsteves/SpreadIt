@@ -11,7 +11,12 @@ const MainLayout = ({ children, authModal }: MainLayoutProps) => {
       <Navbar />
 
       {authModal}
-      <div className="container max-w-7xl mx-auto h-full pt-12">{children}</div>
+      <div
+        className="container max-w-7xl mx-auto h-full pt-12"
+        suppressHydrationWarning
+      >
+        {children}
+      </div>
     </>
   );
 };

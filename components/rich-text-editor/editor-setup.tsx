@@ -37,7 +37,7 @@ const EditorSetup = ({ onChange, editable, content }: EditorSetupProps) => {
     }
   };
 
-  //TODO: FIX HYPERLINK URL PROP/CONFIG
+  //TODO: FIX HYPERLINK URL
   const editor: BlockNoteEditor = useBlockNote({
     initialContent: initialContentToPartialBlock(),
     editable,

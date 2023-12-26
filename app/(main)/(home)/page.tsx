@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { HomeIcon } from "lucide-react";
 
-import { buttonVariants } from "@/components/ui/button";
 import { getAuthSession } from "@/lib/auth";
+import CustomFeed from "./_components/custom-feed";
+import GeneralFeed from "./_components/general-feed";
+import { buttonVariants } from "@/components/ui/button";
 
 const HomePage = async () => {
   const session = await getAuthSession();
@@ -11,7 +13,7 @@ const HomePage = async () => {
     <>
       <h1 className="font-bold text-3xl md:text-4xl">Your feed</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6">
-        {/* {session ? <CustomFeed /> : <GeneralFeed />} */}
+        {session ? <CustomFeed /> : <GeneralFeed />}
 
         <div className="overflow-hidden h-fit rounded-lg border order-first md:order-last">
           <div className="bg-emerald-500 px-6 py-4">
