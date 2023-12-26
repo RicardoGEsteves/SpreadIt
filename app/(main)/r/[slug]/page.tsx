@@ -38,7 +38,7 @@ const SlugPage = async ({ params }: SlugPageProps) => {
   if (!subSpreadIt) return notFound();
 
   return (
-    <>
+    <div suppressHydrationWarning>
       <h1 className="font-bold text-primary text-3xl md:text-4xl h-14">
         r/{subSpreadIt.name}
       </h1>
@@ -47,7 +47,7 @@ const SlugPage = async ({ params }: SlugPageProps) => {
         initialPosts={subSpreadIt.posts}
         subSpreadItName={subSpreadIt.name}
       />
-    </>
+    </div>
   );
 };
 
