@@ -11,6 +11,7 @@ import PostVoteSkeleton from "./_components/post-vote-skeleton";
 import PostVoteServer from "@/components/posts/post-vote/server";
 import { formatTimeToNow } from "@/lib/utils";
 import TextEditorOutput from "@/components/rich-text-editor/text-editor-output";
+import CommentsSection from "@/components/comments/comments-section";
 
 type SubSpreadItPostPageProps = {
   params: {
@@ -76,7 +77,8 @@ const SubSpreadItPostPage = async ({ params }: SubSpreadItPostPageProps) => {
               <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
             }
           >
-            {/* <CommentsSection postId={post?.id ?? cachedPost.id} /> */}
+            {/* @ts-ignore */}
+            <CommentsSection postId={post?.id ?? cachedPost.id} />
           </Suspense>
         </div>
       </div>
