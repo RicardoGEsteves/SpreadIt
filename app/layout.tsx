@@ -25,7 +25,10 @@ export default function RootLayout({
       lang="en"
       className={cn("dark antialiased", inter.className)}
     >
-      <body className="min-h-screen pt-12 antialiased">
+      <body
+        className="min-h-screen pt-12 antialiased"
+        suppressHydrationWarning
+      >
         <QueryProviders>
           <Toaster />
 
