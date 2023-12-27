@@ -6,6 +6,9 @@ import CustomFeed from "./_components/custom-feed";
 import GeneralFeed from "./_components/general-feed";
 import { buttonVariants } from "@/components/ui/button";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 const HomePage = async () => {
   const session = await getAuthSession();
 
