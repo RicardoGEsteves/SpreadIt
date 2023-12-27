@@ -57,6 +57,7 @@ SpreadIt is designed to offer users a smooth experience for discovering, sharing
 > Search
 > ![Demo search](public/demo-images/search.png)
 > Dropdown Navigation
+>
 > ![Demo dropdown navigation](public/demo-images/dropdownMenu.png)
 
 ## Tech Stack
