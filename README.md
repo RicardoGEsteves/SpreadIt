@@ -36,8 +36,28 @@ SpreadIt is designed to offer users a smooth experience for discovering, sharing
 
 ## Demo
 
-![Demo Image 1](demo/demo-image-1.png)
-![Demo Image 2](demo/demo-image-2.png)
+> Sign In
+> ![Demo sigh-in](public/demo-images/signIn.png)
+> Sign Up
+> ![Demo sign-up](public/demo-images/signUp.png)
+> Feed
+> ![Demo feed](public/demo-images/feed.png)
+> Create Community
+> ![Demo create community](public/demo-images/createCommunity.png)
+> Create Post
+> ![Demo create post](public/demo-images/createPost.png)
+> Rich Text Editor
+> ![Demo text editor](public/demo-images/richTextEditor.png)
+> Single Post View
+> ![Demo single post view](public/demo-images/singlePostView.png)
+> Reply Post
+> ![Demo reply post](public/demo-images/replyPost.png)
+> Settings
+> ![Demo settings](public/demo-images/settings.png)
+> Search
+> ![Demo search](public/demo-images/search.png)
+> Dropdown Navigation
+> ![Demo dropdown navigation](public/demo-images/dropdownMenu.png)
 
 ## Tech Stack
 
