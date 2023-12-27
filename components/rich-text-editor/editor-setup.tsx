@@ -23,17 +23,17 @@ const EditorSetup = ({ onChange, editable, content }: EditorSetupProps) => {
 
       return res.url;
     } catch (error) {
-      console.error("Error uploading file:", error);
+      // console.error("Error uploading file:", error);
       throw new Error("File upload failed");
     }
   };
 
   const initialContentToPartialBlock = () => {
-    if (content && typeof content === "string") {
+    if (typeof content === "undefined" || content === null) {
+      return [];
+    } else {
       //@ts-expect-error
       return JSON.parse(content) as PartialBlock[];
-    } else {
-      return [];
     }
   };
 
