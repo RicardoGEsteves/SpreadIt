@@ -24,7 +24,7 @@
     "@tanstack/react-query": "^5.17.8",
     "@uploadthing/react": "^6.0.2",
     "@upstash/redis": "^1.27.1",
-    "axios": "^1.6.3",
+    "axios": "^1.6.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
