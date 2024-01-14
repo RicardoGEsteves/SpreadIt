@@ -3,7 +3,6 @@
 import Image from "next/image";
 
 const CustomImageRenderer = ({ content }: any) => {
-  //TODO: or use content.url check it out
   const src = content.file.url;
 
   return (

@@ -23,7 +23,6 @@ const EditorSetup = ({ onChange, editable, content }: EditorSetupProps) => {
 
       return res.url;
     } catch (error) {
-      // console.error("Error uploading file:", error);
       throw new Error("File upload failed");
     }
   };

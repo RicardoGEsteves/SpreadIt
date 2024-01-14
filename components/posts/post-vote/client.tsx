@@ -79,7 +79,6 @@ const PostVoteClient = ({
 
   return (
     <div className="flex flex-col gap-4 sm:gap-0 pr-6 sm:w-20 pb-4 sm:pb-0">
-      {/* upvote */}
       <Button
         onClick={() => vote("UP")}
         size="sm"
@@ -93,12 +92,10 @@ const PostVoteClient = ({
         />
       </Button>
 
-      {/* score */}
       <p className="text-center py-2 font-medium text-sm text-primary">
         {votesAmt}
       </p>
 
-      {/* downvote */}
       <Button
         onClick={() => vote("DOWN")}
         size="sm"

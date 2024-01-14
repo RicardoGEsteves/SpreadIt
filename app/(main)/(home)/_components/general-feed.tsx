@@ -13,7 +13,7 @@ const GeneralFeed = async () => {
       comments: true,
       subSpreadIt: true,
     },
-    take: INFINITE_SCROLL_PAGINATION_RESULTS, // TODO: Change after development to 10
+    take: INFINITE_SCROLL_PAGINATION_RESULTS,
   });
 
   return <PostFeed initialPosts={posts} />;
