@@ -18,8 +18,6 @@ const TextEditorOutput = ({ content }: TextEditorOutputProps) => {
 
   const handleNoOperation = () => {};
 
-  //TODO: Check if need to create custom renderers for the editor to render the content properly images, links, styles etc.
-
   return (
     <EditorSetup
       onChange={handleNoOperation}

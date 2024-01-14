@@ -79,7 +79,6 @@ const CommentVotes = ({
 
   return (
     <div className="flex gap-1">
-      {/* upvote */}
       <Button
         onClick={() => vote("UP")}
         size="icon"
@@ -93,12 +92,10 @@ const CommentVotes = ({
         />
       </Button>
 
-      {/* score */}
       <p className="text-center py-3 px-1 font-medium text-xs text-primary">
         {votesAmt}
       </p>
 
-      {/* downvote */}
       <Button
         onClick={() => vote("DOWN")}
         size="icon"

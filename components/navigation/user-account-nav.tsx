@@ -45,7 +45,7 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
           </div>
         </div>
         <DropdownMenuSeparator />
-        {/* TODO: Maybe "hover:text-emerald-500 hover:bg-accent" on the items*/}
+
         <DropdownMenuItem asChild>
           <Link href="/">Feed</Link>
         </DropdownMenuItem>

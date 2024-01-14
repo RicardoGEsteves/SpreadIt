@@ -136,11 +136,7 @@ const PostComment = ({
               id="comment"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              // rows={1}
-              //TODO: fix this! textarea should grow with content on high input
-              // or maybe see if it's the text after posted that's the problem.
-
-              // rows={Math.min(3, Math.ceil(input.length / 50))}
+              //TODO: fix this! textarea should grow with content
               placeholder="What are your thoughts?"
             />
 
