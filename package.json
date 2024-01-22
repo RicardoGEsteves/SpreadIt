@@ -10,7 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@blocknote/core": "^0.11.0",
+    "@blocknote/core": "^0.11.1",
     "@blocknote/react": "^0.11.0",
     "@hookform/resolvers": "^3.3.4",
     "@next-auth/prisma-adapter": "^1.0.7",
