@@ -1,5 +1,7 @@
 # SpreadIt
 
+> **(UPDATE)** - with the latest dependencies updates, you will have to do some small config changes.
+
 ### Introduction
 
 Welcome to SpreadIt, a cutting-edge social news aggregation platform that seamlessly blends cutting-edge backend technologies with a user-friendly interface to revolutionize the way you consume and share news. Powered by a robust stack of modern web development frameworks, including TypeScript, React, Next.js, and PostgreSQL, SpreadIt offers a scalable and efficient infrastructure for facilitating seamless content submission, sharing, and voting across various formats, including articles, images, and videos.
