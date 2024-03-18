@@ -47,7 +47,7 @@
   "devDependencies": {
     "@types/lodash.debounce": "4.0.9",
     "@types/node": "20.11.28",
-    "@types/react": "18.2.64",
+    "@types/react": "18.2.67",
     "@types/react-dom": "18.2.22",
     "autoprefixer": "10.4.18",
     "eslint": "8.57.0",
