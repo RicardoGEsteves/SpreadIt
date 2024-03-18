@@ -39,7 +39,7 @@
     "react-hook-form": "^7.51.1",
     "server-only": "^0.0.1",
     "sharp": "^0.33.2",
-    "tailwind-merge": "^2.2.1",
+    "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.5.0",
     "zod": "^3.22.4"
