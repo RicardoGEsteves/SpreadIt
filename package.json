@@ -21,8 +21,8 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
-    "@tanstack/react-query": "^5.32.0",
-    "@uploadthing/react": "^6.5.0",
+    "@tanstack/react-query": "^5.34.2",
+    "@uploadthing/react": "^6.5.1",
     "@upstash/redis": "^1.28.4",
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
@@ -36,13 +36,13 @@
     "next-auth": "^4.24.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.51.1",
+    "react-hook-form": "^7.51.4",
     "server-only": "^0.0.1",
     "sharp": "^0.33.2",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.5.0",
-    "zod": "^3.23.4"
+    "zod": "^3.23.6"
   },
   "devDependencies": {
     "@types/lodash.debounce": "4.0.9",
