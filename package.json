@@ -10,7 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@blocknote/core": "^0.13.0",
+    "@blocknote/core": "^0.13.2",
     "@blocknote/react": "^0.13.0",
     "@hookform/resolvers": "^3.3.4",
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -21,9 +21,9 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
-    "@tanstack/react-query": "^5.34.2",
-    "@uploadthing/react": "^6.5.1",
-    "@upstash/redis": "^1.28.4",
+    "@tanstack/react-query": "^5.36.0",
+    "@uploadthing/react": "^6.5.3",
+    "@upstash/redis": "^1.30.1",
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -42,7 +42,7 @@
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.5.0",
-    "zod": "^3.23.6"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/lodash.debounce": "4.0.9",
