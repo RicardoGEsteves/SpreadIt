@@ -30,7 +30,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "lodash.debounce": "^4.0.8",
-    "lucide-react": "^0.382.0",
+    "lucide-react": "^0.383.0",
     "nanoid": "^5.0.5",
     "next": "^14.2.3",
     "next-auth": "^4.24.6",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@types/lodash.debounce": "4.0.9",
-    "@types/node": "20.13.0",
+    "@types/node": "20.14.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "autoprefixer": "10.4.19",
