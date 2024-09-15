@@ -21,7 +21,7 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
-    "@tanstack/react-query": "^5.55.2",
+    "@tanstack/react-query": "^5.56.2",
     "@uploadthing/react": "^6.7.2",
     "@upstash/redis": "^1.31.5",
     "axios": "^1.7.7",
@@ -30,9 +30,9 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "lodash.debounce": "^4.0.8",
-    "lucide-react": "^0.439.0",
+    "lucide-react": "^0.441.0",
     "nanoid": "^5.0.5",
-    "next": "^14.2.7",
+    "next": "^14.2.11",
     "next-auth": "^4.24.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -46,15 +46,15 @@
   },
   "devDependencies": {
     "@types/lodash.debounce": "4.0.9",
-    "@types/node": "22.5.4",
+    "@types/node": "22.5.5",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
     "autoprefixer": "10.4.20",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.2.8",
-    "postcss": "8.4.45",
+    "eslint-config-next": "14.2.11",
+    "postcss": "8.4.47",
     "prisma": "5.19.1",
-    "tailwindcss": "3.4.10",
-    "typescript": "5.5.4"
+    "tailwindcss": "3.4.11",
+    "typescript": "5.6.2"
   }
 }
