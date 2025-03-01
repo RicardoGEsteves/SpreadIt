@@ -30,7 +30,7 @@
     "cmdk": "^1.0.3",
     "date-fns": "^4.1.0",
     "lodash.debounce": "^4.0.8",
-    "lucide-react": "^0.476.0",
+    "lucide-react": "^0.477.0",
     "nanoid": "^5.0.8",
     "next": "^15.1.5",
     "next-auth": "^4.24.6",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@types/lodash.debounce": "4.0.9",
-    "@types/node": "22.13.5",
+    "@types/node": "22.13.8",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "autoprefixer": "10.4.20",
@@ -55,6 +55,6 @@
     "postcss": "8.5.3",
     "prisma": "6.4.1",
     "tailwindcss": "3.4.17",
-    "typescript": "5.7.3"
+    "typescript": "5.8.2"
   }
 }
